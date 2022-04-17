@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>What is a Variable</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/blood.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +16,185 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h3>What is a Variable?</h3>
+					<p class= "fragment">A variable is a bucket</p>
+					<p class= "fragment"> with a name.</p>
+				</section>
+				<section> 
+					Let's work through an example. 
+				</section>
+				<section data-transition="fade">
+					<pre><code class="cs" data-trim data-noescape>
+						int buck;
+					</code></pre>
+				</section>
+				<section data-transition="fade">
+					<pre><code class="cs" data-trim data-noescape>
+						<mark>int</mark> buck;
+					</code></pre>
+					<strong>int</strong> indicates that the variable will hold an <em>'integer'</em> (i.e. a whole number, no decimals).
+				</section>
+				<section data-transition="fade">
+					<pre><code class="cs" data-trim data-noescape>
+						int <mark>buck</mark>;
+					</code></pre>
+					<strong>buck</strong> is the name of the variable.
+				</section>
+				<section data-transition="fade">
+					<pre><code class="cs" data-trim data-noescape>
+						int buck<mark>;</mark>
+					</code></pre>
+					<p>In C# commands are terminated with semicolons. Think of it like the period at the end of a sentence.</p>
+				</section>
+				<section data-transition="fade">
+					<p>Let's say we want to do something with our variable. How about we try to print it to the console?</p>
+				</section>
+				<section data-transition="fade">
+					<pre><code class="cs" data-trim data-noescape>
+						int <mark>buck</mark>;
+						Debug.Log(buck);
+						</code></pre>
+				<pclass= "fragment">A variable is a bucket or container. Here it has the name <strong>buck</strong>.</p>
+				</section>
+				<section data-transition="fade">
+					<pre><code class="cs" data-trim data-noescape>
+						int buck;
+						Debug.Log(<mark>buck</mark>);
+						</code></pre>
+				<p> When we use its name elsewhere we are saying: </p>
+				<blockquote class= "fragment">take whatever is inside <strong>buck</strong> and use it here.</blockquote>
+				<p class= "fragment">In this case we printed it to the console.</p>
+				</section>
+				<section data-transition="fade">
+					<pre><code class="cs" data-trim data-noescape>
+						int buck;
+						Debug.Log(buck);
+						</code></pre>
+					<pre class= "fragment"><code class="hljs" data-trim data-noescape>
+						0
+					</code></pre>
+				</section>
+				<section data-transition="fade">
+					<h5>Where did the 0 come from?</h5>
+					<p class="fragment">
+						Whenever possible, a newly declared variable will be assigned a default value. What that default value is depends on the type of the variable. 
+					</p>
+					<p class="fragment">
+						In the case of integers, (and most other types of numbers) the default value is `0`. So when we print it to the console, we get `0`.
+					</p>
+
+				</section>
+				<section data-transition="fade">
+					<p>If we want to store some other value in a variable, we need to <em>assign it</em></p>
+				</section>
+				<section data-transition="fade">
+					<pre><code class="cs" data-trim data-noescape>
+						buck = 6;
+					</code></pre>
+					<p class= "fragment">put the number <strong>6</strong> into <strong>buck</strong></p>
+					<p class= "fragment">the old value (<strong>0</strong>) is overwritten.</p>
+				</section>
+
+				<section data-transition="fade">
+					<h5>What else can we do with variables?</h5>
+				</section>
+				<section data-transition="fade">
+					Addition:
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						int a = 0;
+						int b = a + 1;
+
+						Debug.Log("a: " + a);
+						Debug.Log("b: " + b);
+					</code></pre>
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						a: 0
+						b: 1
+					</code></pre>
+				</section>
+				<section data-transition="fade">
+					Subtraction:
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						b = a - 2;
+
+						Debug.Log("b: " + b);
+					</code></pre>
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						b: -2
+					</code></pre>
+				</section>
+				<section data-transition="fade">
+					Multiplication:
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						int c = b * 3;
+
+						Debug.Log("c: " + c);
+					</code></pre>
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						c: -6
+					</code></pre>
+				</section>
+				<section data-transition="fade">
+					Multiplication:
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						int d = c * b;
+
+						Debug.Log("d: " + d);
+					</code></pre>
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						d: 12
+					</code></pre>
+				</section>
+				<section data-transition="fade">
+					Division:
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						int e = d / 4;
+
+						Debug.Log("e: " + e);
+					</code></pre>
+					<pre class= "fragment"><code class = "cs" data-trim data-noescape>
+						e: 3
+					</code></pre>
+				</section>
+
+				<section data-transition="fade">
+					<h5>Other types of bucket</h5>
+					<table class= "fragment">
+						<thead>
+							<th>Keyword</th>
+							<th>What is it?</th>
+							<th>Example</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>int</td>
+								<td>Whole number</td>
+								<td>42</td>
+							</tr>
+							<tr>
+								<td>float</td>
+								<td>decimal</td>
+								<td>3.1315</td>
+							</tr>
+							<tr>
+								<td>char</td>
+								<td>single character</td>
+								<td>j</td>
+							</tr>
+							<tr>
+								<td>string</td>
+								<td>a string of characters</td>
+								<td>sandwich</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section data-transition="fade">
+					
+				</section>
+
+
 			</div>
 		</div>
 
